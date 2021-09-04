@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md" style="background: var(--orange);box-shadow: 0px 3px 4px rgb(135,138,140);">
+        <div class="container-fluid"><a class="navbar-brand" href="#" style="font-family: Alatsi, sans-serif;"><strong>Iris Prediction</strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav"></ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center d-lg-flex justify-content-lg-center" style="margin-top: 61px;">
+        <form action="{{url_for('predict')}}" method="post" class="needs-validation">
+            <div class="form-group" style="color: var(--gray-dark);background: var(--purple);padding: 5px;box-shadow: -3px 4px 9px rgb(179,194,208);">
+                <input class="d-lg-flex justify-content-lg-end form-control" type="number" name="Shaple Length" step="0.001" placeholder="Shaple Length in cm" style="width: 347px;padding: 4px;margin: 4px;" required>
+                <input class="d-lg-flex justify-content-lg-end form-control" type="number" name="Shaple Width" step="0.001" placeholder="Shaple Width in cm" style="width: 347px;padding: 4px;margin: 4px;" required>
+                <input class="d-lg-flex justify-content-lg-end form-control" type="number" name="Patel Length" step="0.001" placeholder="Patel Length in cm" style="width: 347px;padding: 4px;margin: 4px;" required>
+                <input class="d-lg-flex justify-content-lg-end form-control" type="number" name="Patel Width" step="0.001" placeholder="Patel Width in cm" style="width: 347px;padding: 4px;margin: 4px;" required>
+                <div style="margin-top:13px"><label style="margin-right: 13px;color: rgb(234,245,255);">Number of K for KNN</label><input type="number" name="K" value="5" min="1" max="1000" step="1" style="background: var(--light);width: 70px;border-color: rgba(255,178,178,0);border-radius: -39px;box-shadow: -3px 4px 6px rgb(84,72,72);" /></div>
+                <div class="text-center">
+                    <select class="justify-content-center" style="box-shadow: -1px 2px 6px rgb(74,66,66);margin: 5px;margin-bottom: 10px;" name="ml_alg">
+                        <optgroup label="Chose a ML Model">
+                            <option value="0" selected>Logistic Regression</option>
+                            <option value="1">K Nearest Neighbor</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <button class="btn btn-primary" type="submit" style="background: #8cd600;border-style: none;margin: 5px;">Predict</button>
+                <span style="color: var(--light);font-size: 23px;text-shadow: 0px 0px;">{{ prediction_text }}</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+
+
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
